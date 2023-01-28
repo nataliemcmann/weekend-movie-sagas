@@ -35,8 +35,9 @@ function* fetchMovieDetails(action) {
     try {
         let id = action.payload;
         const details = yield axios.get(`/api/movie/${id}`);
-        console.log('get details:', details.data);
-        yield put({type: 'SET_DETAILS', payload: details.data });
+        let movieObject = details.data[0];
+        console.log('get details:', movieObject);
+        yield put({type: 'SET_DETAILS', payload: movieObject });
 
     } catch {
         console.log('get request movie details error');
@@ -77,7 +78,7 @@ const movieID = (state=0, action) => {
 }
 
 //store specific movie details
-const movieDetails = (state=[], action) => {
+const movieDetails = (state={}, action) => {
     switch(action.type) {
         case 'SET_DETAILS':
             return action.payload;

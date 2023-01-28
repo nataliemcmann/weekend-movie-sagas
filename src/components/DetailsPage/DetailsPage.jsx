@@ -19,9 +19,11 @@ function DetailsPage () {
 
     return (
         <>
-        <h2>Specific {movieDetails.title} details!</h2>
-        {/* <h3>{movie.title}</h3>
-        <img src={movie.poster} alt={movie.title}/> */}
+            <h2>Specific {movieDetails.title} details!</h2>
+            <img 
+                src={movieDetails.poster} 
+                alt={movieDetails.title}
+            /> 
         </>
     )
 }

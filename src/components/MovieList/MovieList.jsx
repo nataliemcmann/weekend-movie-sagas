@@ -15,9 +15,11 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    const sendToDetails = ({movie}) => {
+    const sendToDetails = (event, {movie}) => {
+        event.preventDefault();
         let id = movie.id
-        history.push('/details');
+        console.log(id);
+        history.push(`/${id}`);
         dispatch({
             type: 'SET_ID',
             payload: id
@@ -35,7 +37,7 @@ function MovieList() {
                             <img 
                                 src={movie.poster} 
                                 alt={movie.title}
-                                onClick={sendToDetails({movie})}
+                                onClick={(event) =>{sendToDetails(event, {movie})}}
                                 />
                         </div>
                     );
