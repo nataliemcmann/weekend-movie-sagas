@@ -1,15 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import './MovieList.css'
 
 function MovieList() {
-
+    //declare dispatch
     const dispatch = useDispatch();
+    //declare history
+    const history = useHistory();
+    //subscribe to movies reducer
     const movies = useSelector(store => store.movies);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
+
+    const sendToDetails = ({movie}) => {
+        history.push('/details');
+    }
 
     return (
         <main>
@@ -19,7 +27,11 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
+                            <img 
+                                src={movie.poster} 
+                                alt={movie.title}
+                                onClick={sendToDetails}
+                                />
                         </div>
                     );
                 })}
