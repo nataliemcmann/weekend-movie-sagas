@@ -17,6 +17,10 @@ function MovieList() {
 
     const sendToDetails = ({movie}) => {
         history.push('/details');
+        dispatch({
+            type: 'SET_ID',
+            payload: `${movie.id}`
+        })
     }
 
     return (
