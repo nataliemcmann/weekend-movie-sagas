@@ -38,6 +38,9 @@ function* fetchMovieDetails(action) {
         let movieObject = details.data[0];
         console.log('get details:', movieObject);
         yield put({type: 'SET_DETAILS', payload: movieObject });
+        let genres = movieObject.json_agg;
+        console.log(genres);
+        yield put({type: 'SET_GENRES_LIST', payload: genres}); 
 
     } catch {
         console.log('get request movie details error');
@@ -77,6 +80,17 @@ const movieID = (state=0, action) => {
     }
 }
 
+//store specific movie genres
+const genreList = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_GENRES_LIST':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+
 //store specific movie details
 const movieDetails = (state={}, action) => {
     switch(action.type) {
@@ -94,7 +108,8 @@ const storeInstance = createStore(
         movies,
         genres,
         movieID,
-        movieDetails
+        movieDetails,
+        genreList
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

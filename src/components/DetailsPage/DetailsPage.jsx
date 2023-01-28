@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import GenreList from './GenreList';
 
 function DetailsPage () {
         //declare dispatch
@@ -19,11 +20,13 @@ function DetailsPage () {
 
     return (
         <>
-            <h2>Specific {movieDetails.title} details!</h2>
+            <h2>{movieDetails.title}</h2>
             <img 
                 src={movieDetails.poster} 
                 alt={movieDetails.title}
             /> 
+            <GenreList />
+            <p>{movieDetails.description}</p>
         </>
     )
 }
