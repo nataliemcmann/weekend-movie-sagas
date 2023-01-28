@@ -1,9 +1,12 @@
 import {HashRouter as Router, Route} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './App.css';
 import MovieList from '../MovieList/MovieList'
 import DetailsPage from '../DetailsPage/DetailsPage';
 
 function App() {
+  const movieID = useSelector(store => store.movieID);
+
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
@@ -11,7 +14,7 @@ function App() {
         <Route path="/" exact>
           <MovieList />
         </Route>
-        <Route path="/details" exact>
+        <Route path="/${movieID}" exact>
           <DetailsPage />
         </Route>
         {/* Details page */}

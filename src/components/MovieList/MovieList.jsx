@@ -16,10 +16,11 @@ function MovieList() {
     }, []);
 
     const sendToDetails = ({movie}) => {
+        let id = movie.id
         history.push('/details');
         dispatch({
             type: 'SET_ID',
-            payload: `${movie.id}`
+            payload: id
         })
     }
 
@@ -34,7 +35,7 @@ function MovieList() {
                             <img 
                                 src={movie.poster} 
                                 alt={movie.title}
-                                onClick={sendToDetails}
+                                onClick={sendToDetails({movie})}
                                 />
                         </div>
                     );

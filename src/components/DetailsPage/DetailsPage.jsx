@@ -5,20 +5,21 @@ function DetailsPage () {
         //declare dispatch
         const dispatch = useDispatch();
         //declare history
-        const history = useHistory();
+        // const history = useHistory();
         //subscribe to movies reducer
         const movieDetails = useSelector(store => store.movieDetails);
+        const movieID = useSelector(store => store.movieID);
 
-        useEffect({
-            dispatch({
-                type: ,
-                payload:
-            })
-        }, [])
+        useEffect(() => {
+            console.log(movieID);
+            dispatch({ 
+                type: 'FETCH_DETAILS',
+                payload: movieID });
+        }, []);
 
     return (
         <>
-        <h2>Specific Movie details!</h2>
+        <h2>Specific {movieDetails.title} details!</h2>
         {/* <h3>{movie.title}</h3>
         <img src={movie.poster} alt={movie.title}/> */}
         </>
