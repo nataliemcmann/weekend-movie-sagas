@@ -18,3 +18,4 @@ Client side:
 - make GET route in router for a movie details
 - make a GET saga function to handle requests to that router
 - make a component with /details path that renders the movie details
+- make a Back to List button
