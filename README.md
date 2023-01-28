@@ -1,9 +1,20 @@
-# Project Name
+# General Plan
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Code Inventory 
 
-## Description
+What's already here?
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Server side: 
+- two urls '/api/movie' and '/api/genre'
+- movie router contains a get and a post
+- genre router contains a get that merely sends 500 (this is a stretch goal thing)
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Client side: 
+- index.js contains redux and saga boilerplate plus a SAGA get request and state for movies and genres
+- component folder contains app and movieList components
+- App.js has hashrouter boiler plate with comments to add a details and a movie form...do details first
+
+# Base Mode Plan
+- make GET route in router for a movie details
+- make a GET saga function to handle requests to that router
+- make a component with /details path that renders the movie details
