@@ -2,6 +2,19 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function DetailsPage () {
+        //declare dispatch
+        const dispatch = useDispatch();
+        //declare history
+        const history = useHistory();
+        //subscribe to movies reducer
+        const movieDetails = useSelector(store => store.movieDetails);
+
+        useEffect({
+            dispatch({
+                type: ,
+                payload:
+            })
+        }, [])
 
     return (
         <>
