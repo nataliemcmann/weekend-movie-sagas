@@ -70,16 +70,6 @@ const genres = (state = [], action) => {
     }
 }
 
-//store specific movie id
-const movieID = (state='', action) => {
-    switch(action.type) {
-        case 'SET_ID':
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
 //store specific movie genres
 const genreList = (state = [], action) => {
     switch (action.type) {
@@ -107,7 +97,6 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
-        movieID,
         movieDetails,
         genreList
     }),
