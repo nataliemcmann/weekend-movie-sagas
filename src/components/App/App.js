@@ -11,13 +11,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="App-header">Cool Movie List!</h1>
+      <h1 className="App-header">COOL MOVIE LIST!</h1>
       <Router>        
         <Route path="/" exact>
           <Container maxWidth="xl">
             <Grid 
             container rowSpacing={4} 
-            columnSpacing={{ xs: 2 }}
+            columnSpacing={{ xs: 4 }}
             >
               <MovieList />
             </Grid>

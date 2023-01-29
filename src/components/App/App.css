@@ -10,11 +10,8 @@ body {
   background-color: #222;
   height: 100px;
   padding: 20px;
+  font-size: 2em;
   color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
 }
 
 .App-intro {
