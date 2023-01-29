@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GenreList from './GenreList';
+import BackButton from './BackButton';
 
 function DetailsPage () {
         //declare dispatch
@@ -20,6 +21,7 @@ function DetailsPage () {
 
     return (
         <>
+            <BackButton />
             <h2>{movieDetails.title}</h2>
             <img 
                 src={movieDetails.poster} 

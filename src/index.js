@@ -71,7 +71,7 @@ const genres = (state = [], action) => {
 }
 
 //store specific movie id
-const movieID = (state=0, action) => {
+const movieID = (state='', action) => {
     switch(action.type) {
         case 'SET_ID':
             return action.payload;
