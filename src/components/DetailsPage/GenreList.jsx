@@ -5,7 +5,6 @@ function GenreList () {
     //retrieve movieDetails
     const genreList = useSelector(store => store.genreList);
 
-
     return (
         <>
         <h4>Genres: {genreList.join(' - ')}</h4>

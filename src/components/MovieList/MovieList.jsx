@@ -6,15 +6,19 @@ import './MovieList.css'
 function MovieList() {
     //declare dispatch
     const dispatch = useDispatch();
+    
     //declare history
     const history = useHistory();
+
     //subscribe to movies reducer
     const movies = useSelector(store => store.movies);
 
+    //get movie list upon page load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    //send user to the details page on image click
     const sendToDetails = (event, {movie}) => {
         event.preventDefault();
         let id = movie.id

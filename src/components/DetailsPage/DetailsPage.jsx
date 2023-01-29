@@ -6,12 +6,12 @@ import BackButton from './BackButton';
 function DetailsPage () {
         //declare dispatch
         const dispatch = useDispatch();
-        //declare history
-        // const history = useHistory();
-        //subscribe to movies reducer
+
+        //subscribe to movies and movieID reducer
         const movieDetails = useSelector(store => store.movieDetails);
         const movieID = useSelector(store => store.movieID);
 
+        //fetch movieDetails fron db on page load
         useEffect(() => {
             console.log(movieID);
             dispatch({ 
