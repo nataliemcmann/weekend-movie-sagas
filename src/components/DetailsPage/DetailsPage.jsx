@@ -12,9 +12,8 @@ function DetailsPage () {
         //declare dispatch
         const dispatch = useDispatch();
 
-        //subscribe to movies and movieID reducer
+        //subscribe to movieDetials reducer
         const movieDetails = useSelector(store => store.movieDetails);
-        const movieID = useSelector(store => store.movieID);
 
         //grabbing id from route parameter
         let { id } = useParams();
